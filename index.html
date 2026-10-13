@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZIN MOYI ANK | UG ER Representative Campaign 2026</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Source Sans 3 & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Chart.js for Interactive Data Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Source Sans 3"', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#F0F7FF',
+                            100: '#E0EFFE',
+                            200: '#BAE0FD',
+                            300: '#7CD0FC',
+                            400: '#38BDF8',
+                            500: '#0284C7',
+                            600: '#0369A1',
+                            700: '#075985',
+                            800: '#0C4A6E',
+                            900: '#0A2540',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite linear',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(2, 132, 199, 0.25)' },
+                            '50%': { boxShadow: '0 0 40px rgba(56, 189, 248, 0.55)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: #FAFCFF;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(186, 224, 253, 0.4);
+        }
+
+        .glass-dark {
+            background: rgba(10, 37, 64, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0A2540 0%, #0284C7 50%, #38BDF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0284C7 0%, #0369A1 50%, #0A2540 100%);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F0F7FF;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #38BDF8;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white custom-scrollbar">
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/85 backdrop-blur-md border-b border-brand-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo & Candidate Title -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl gradient-bg flex items-center justify-center text-white font-outfit font-extrabold text-lg shadow-md group-hover:scale-105 transition-transform">
+                    RM
+                </div>
+                <div>
+                    <span class="font-outfit font-extrabold text-xl tracking-tight text-brand-900 block leading-tight">RAZIN MOYI ANK</span>
+                    <span class="text-xs font-bold text-brand-500 tracking-wider uppercase flex items-center gap-1">
+                        <i class="fa-solid fa-check-circle text-brand-400 text-[10px]"></i> Candidate for UG ER Rep
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center space-x-7 font-semibold text-sm text-slate-700">
+                <a href="#vision" class="hover:text-brand-500 transition-colors py-1">Manifesto</a>
+                <a href="#countdown" class="hover:text-brand-500 transition-colors py-1">Election Day</a>
+                <a href="#games" class="hover:text-brand-500 transition-colors py-1">Interactive Zone</a>
+                <a href="#analytics" class="hover:text-brand-500 transition-colors py-1">Poll Analytics</a>
+                <a href="#badge" class="hover:text-brand-500 transition-colors py-1">Get Badge</a>
+                <a href="#supporters" class="hover:text-brand-500 transition-colors py-1">Supporters</a>
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-pink-500 to-amber-400 text-white flex items-center justify-center shadow-md hover:opacity-90 hover:scale-105 transition-all" title="Follow Razin on Instagram">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <button onclick="triggerVoteModal()" class="px-5 py-2.5 rounded-xl gradient-bg text-white font-outfit font-bold text-sm shadow-md shadow-brand-500/20 hover:scale-105 hover:shadow-lg transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-check-to-slot"></i> Vote Razin
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center gap-2 md:hidden">
+                <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-lg bg-pink-50 text-pink-600 border border-pink-200 flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-base"></i>
+                </a>
+                <button onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-200 text-brand-900 flex items-center justify-center focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-brand-100 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#vision" onclick="toggleMobileMenu()" class="block font-semibold text-slate-800 hover:text-brand-500 py-1">Manifesto & Agenda</a>
+            <a href="#countdown" onclick="toggleMobileMenu()" class="block font-semibold text-slate-800 hover:text-brand-500 py-1">Election Day Countdown</a>
+            <a href="#games" onclick="toggleMobileMenu()" class="block font-semibold text-slate-800 hover:text-brand-500 py-1">Interactive Scenario Game</a>
+            <a href="#analytics" onclick="toggleMobileMenu()" class="block font-semibold text-slate-800 hover:text-brand-500 py-1">Real-time Analytics</a>
+            <a href="#badge" onclick="toggleMobileMenu()" class="block font-semibold text-slate-800 hover:text-brand-500 py-1">Generate Supporter Badge</a>
+            <a href="#supporters" onclick="toggleMobileMenu()" class="block font-semibold text-slate-800 hover:text-brand-500 py-1">Wall of Fame</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <button onclick="toggleMobileMenu(); triggerVoteModal();" class="w-full py-3 rounded-xl gradient-bg text-white font-outfit font-bold text-center shadow-md">
+                    <i class="fa-solid fa-check-to-slot mr-1"></i> Vote Razin Moyi Ank
+                </button>
+                <button onclick="toggleMobileMenu(); triggerContactModal();" class="w-full py-2.5 rounded-xl bg-brand-50 text-brand-700 font-semibold text-sm border border-brand-200">
+                    <i class="fa-solid fa-envelope mr-1"></i> Contact Candidate
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-28 pb-16 md:pt-36 md:pb-28 overflow-hidden bg-gradient-to-b from-brand-50/80 via-white to-brand-50/30">
+        <!-- Background Ambient Glow Blobs -->
+        <div class="absolute -top-24 -left-20 w-96 h-96 bg-brand-300/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 -right-20 w-96 h-96 bg-brand-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100/80 border border-brand-200 text-brand-800 font-semibold text-xs tracking-wide uppercase shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-500 animate-ping"></span>
+                        Official Candidate • UG External Relations Rep
+                    </div>
+
+                    <h1 class="font-outfit font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-brand-900 leading-[1.08]">
+                        Empower. <br>
+                        <span class="gradient-text">Represent.</span> <br>
+                        Transform UG ER.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-600 font-sans max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        A dedicated representative bridging the gap between undergraduate students and administration. Focused on modern lab equipment, fast-track academic issue resolution, and transparent communication.
+                    </p>
+
+                    <!-- Hero Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <button onclick="triggerVoteModal()" class="w-full sm:w-auto px-8 py-4 rounded-2xl gradient-bg text-white font-outfit font-bold text-base shadow-xl shadow-brand-500/25 hover:scale-105 transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-box-archive text-lg"></i> Pledge Your Vote
+                        </button>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white border-2 border-brand-200 text-brand-900 font-outfit font-bold text-base hover:bg-brand-50 hover:border-brand-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-brands fa-instagram text-pink-500 text-xl"></i> Follow @RazinOnInsta
+                        </a>
+                    </div>
+
+                    <!-- Quick Campaign Highlights Pills -->
+                    <div class="pt-6 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="p-3 rounded-xl bg-white/80 border border-brand-100 shadow-sm text-center">
+                            <div class="font-outfit font-extrabold text-xl text-brand-600">100%</div>
+                            <div class="text-xs text-slate-500 font-medium">UG Student Focus</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/80 border border-brand-100 shadow-sm text-center">
+                            <div class="font-outfit font-extrabold text-xl text-brand-600">24/7</div>
+                            <div class="text-xs text-slate-500 font-medium">Open Desk Portal</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/80 border border-brand-100 shadow-sm text-center">
+                            <div class="font-outfit font-extrabold text-xl text-brand-600">Oct 16</div>
+                            <div class="text-xs text-slate-500 font-medium">Election Day</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Candidate Image Column -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Backdrop Decorative Frame -->
+                        <div class="absolute inset-0 gradient-bg rounded-3xl rotate-3 scale-105 opacity-20 blur-xl animate-pulse-glow"></div>
+                        
+                        <!-- Candidate Card Wrapper -->
+                        <div class="relative glass-card rounded-3xl p-6 text-center shadow-2xl border border-white">
+                            
+                            <!-- Candidate Image Container -->
+                            <div class="relative w-full aspect-[4/5] mx-auto mb-6 rounded-2xl overflow-hidden bg-gradient-to-b from-brand-100 via-white to-brand-50 border-4 border-white shadow-inner flex items-end justify-center">
+                                <img src="input_file_0.png" alt="Razin Moyi Ank" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
+                                
+                                <!-- Floating Verification Badge -->
+                                <div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md text-brand-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-md border border-brand-100 flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Official Candidate
+                                </div>
+                            </div>
+
+                            <!-- Candidate Meta Info -->
+                            <h2 class="font-outfit font-extrabold text-2xl text-brand-900">RAZIN MOYI ANK</h2>
+                            <p class="text-brand-600 font-semibold text-sm mb-3">UG External Relations Representative Candidate</p>
+                            
+                            <!-- Interactive Quick Action inside Card -->
+                            <div class="flex items-center justify-center gap-2 pt-2">
+                                <button onclick="triggerContactModal()" class="px-4 py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-700 font-semibold text-xs border border-brand-200 transition-colors flex items-center gap-1.5">
+                                    <i class="fa-solid fa-paper-plane text-brand-500"></i> Direct Message
+                                </button>
+                                <a href="https://instagram.com" target="_blank" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-xs shadow-sm hover:opacity-90 transition-opacity flex items-center gap-1.5">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="countdown" class="py-12 bg-brand-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-5 text-center lg:text-left">
+                    <span class="text-brand-400 font-bold text-xs uppercase tracking-widest bg-brand-800/80 px-3 py-1 rounded-full border border-brand-700">
+                        Official Election Date
+                    </span>
+                    <h2 class="font-outfit font-extrabold text-3xl sm:text-4xl text-white mt-3">
+                        October 16, 2026
+                    </h2>
+                    <p class="text-brand-200 text-sm mt-2">
+                        Every single vote counts. Mark your calendar and make your voice heard!
+                    </p>
+                </div>
+
+                <!-- Ticking Countdown Blocks -->
+                <div class="lg:col-span-7">
+                    <div class="grid grid-cols-4 gap-3 sm:gap-4 text-center">
+                        <div class="glass-dark p-4 rounded-2xl border border-brand-700 shadow-inner">
+                            <span id="timerDays" class="block font-outfit font-extrabold text-3xl sm:text-5xl text-brand-300">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-400 tracking-wider">Days</span>
+                        </div>
+                        <div class="glass-dark p-4 rounded-2xl border border-brand-700 shadow-inner">
+                            <span id="timerHours" class="block font-outfit font-extrabold text-3xl sm:text-5xl text-brand-300">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-400 tracking-wider">Hours</span>
+                        </div>
+                        <div class="glass-dark p-4 rounded-2xl border border-brand-700 shadow-inner">
+                            <span id="timerMinutes" class="block font-outfit font-extrabold text-3xl sm:text-5xl text-brand-300">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-400 tracking-wider">Minutes</span>
+                        </div>
+                        <div class="glass-dark p-4 rounded-2xl border border-brand-700 shadow-inner">
+                            <span id="timerSeconds" class="block font-outfit font-extrabold text-3xl sm:text-5xl text-brand-400 animate-pulse">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-400 tracking-wider">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="vision" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                    Key Agendas & Commitments
+                </span>
+                <h2 class="font-outfit font-extrabold text-3xl sm:text-5xl text-slate-900 mt-4 mb-4">
+                    Why Razin Moyi Ank for UG ER?
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Real, actionable proposals crafted to directly address undergraduate requirements in academic resources, external relations, and campus life.
+                </p>
+            </div>
+
+            <!-- Agenda Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Agenda 1 -->
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-brand-50/50 to-white border border-brand-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="font-outfit font-bold text-xl text-slate-900 mb-3">Modern ER Lab Tools</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Upgrading outdated laboratory equipment, extending lab open hours, and ensuring seamless component availability for UG project work.
+                    </p>
+                </div>
+
+                <!-- Agenda 2 -->
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-brand-50/50 to-white border border-brand-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                    </div>
+                    <h3 class="font-outfit font-bold text-xl text-slate-900 mb-3">Transparent Governance</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Bi-weekly open student forums, published meeting notes, and direct digital tracking for every submitted student issue.
+                    </p>
+                </div>
+
+                <!-- Agenda 3 -->
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-brand-50/50 to-white border border-brand-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3 class="font-outfit font-bold text-xl text-slate-900 mb-3">24/7 Academic Spaces</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Pushing for round-the-clock library access during examination cycles with improved high-speed Wi-Fi and quiet study zones.
+                    </p>
+                </div>
+
+                <!-- Agenda 4 -->
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-brand-50/50 to-white border border-brand-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3 class="font-outfit font-bold text-xl text-slate-900 mb-3">Industry & Alumni Bridge</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Connecting UG students with external workshops, industrial visits, and mentorship sessions from alumni networks.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="py-20 bg-gradient-to-b from-brand-50/40 via-white to-brand-50/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                    Interactive Decision Simulator
+                </span>
+                <h2 class="font-outfit font-extrabold text-3xl sm:text-5xl text-slate-900 mt-4 mb-4">
+                    What Would Razin Do?
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Select a common campus challenge below to test Razin's leadership vision and proposed solutions!
+                </p>
+            </div>
+
+            <div class="glass-card max-w-4xl mx-auto rounded-3xl p-6 sm:p-10 shadow-xl border border-brand-200">
+                
+                <!-- Scenario Tabs / Selection Buttons -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                    <button onclick="selectScenario(0)" id="scenBtn0" class="p-4 rounded-2xl border border-brand-200 bg-brand-50 text-brand-900 font-semibold text-sm text-left hover:border-brand-500 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-wifi text-brand-500 text-xl"></i>
+                        <span>Lab & Wi-Fi Downtime</span>
+                    </button>
+                    <button onclick="selectScenario(1)" id="scenBtn1" class="p-4 rounded-2xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm text-left hover:border-brand-500 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-brand-500 text-xl"></i>
+                        <span>Academic Grievances</span>
+                    </button>
+                    <button onclick="selectScenario(2)" id="scenBtn2" class="p-4 rounded-2xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm text-left hover:border-brand-500 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-utensils text-brand-500 text-xl"></i>
+                        <span>Campus Amenities</span>
+                    </button>
+                </div>
+
+                <!-- Active Scenario Content Box -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-inner">
+                    <div class="flex items-center gap-3 text-xs font-bold uppercase text-brand-600 tracking-wider mb-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-500"></span> Scenario Analysis
+                    </div>
+                    
+                    <h3 id="scenTitle" class="font-outfit font-extrabold text-2xl text-slate-900 mb-3">
+                        Issue: Poor Wi-Fi Speed & Equipment Availability in Labs
+                    </h3>
+                    
+                    <p id="scenProblem" class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                        Students frequently experience slow connectivity during practical exams and lack required components for ER lab work.
+                    </p>
+
+                    <!-- Razin's Action Plan Highlight -->
+                    <div class="p-5 rounded-xl bg-brand-50/80 border-l-4 border-brand-500 text-slate-800 space-y-2">
+                        <h4 class="font-outfit font-bold text-base text-brand-900 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-500"></i> Razin's Immediate Action Plan:
+                        </h4>
+                        <p id="scenSolution" class="text-sm text-slate-700 leading-relaxed">
+                            Propose a dedicated high-bandwidth bandwidth node for UG ER labs and establish a component rental portal managed transparently through student volunteers.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 flex justify-end">
+                        <button onclick="triggerVoteModal()" class="px-5 py-2.5 rounded-xl gradient-bg text-white font-outfit font-bold text-sm shadow-md hover:scale-105 transition-all">
+                            Support This Solution
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="analytics" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                    Live Feedback & Analytics
+                </span>
+                <h2 class="font-outfit font-extrabold text-3xl sm:text-5xl text-slate-900 mt-4 mb-4">
+                    Real-time Campus Priorities
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Cast your vote in the live simulator and watch the live analytics chart update immediately.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Poll Voting Buttons -->
+                <div class="lg:col-span-5 space-y-4">
+                    <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-2">
+                        What should Razin prioritize first?
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4">Click any option below to cast a live simulated vote.</p>
+
+                    <button onclick="castLiveVote(0)" class="w-full text-left p-4 rounded-2xl bg-white border border-brand-200 hover:border-brand-500 transition-all shadow-sm flex items-center justify-between group">
+                        <span class="font-semibold text-slate-800 group-hover:text-brand-600">🔬 Upgrading ER Lab Equipment</span>
+                        <span id="voteCount0" class="font-outfit font-bold text-brand-600 text-sm">42%</span>
+                    </button>
+
+                    <button onclick="castLiveVote(1)" class="w-full text-left p-4 rounded-2xl bg-white border border-brand-200 hover:border-brand-500 transition-all shadow-sm flex items-center justify-between group">
+                        <span class="font-semibold text-slate-800 group-hover:text-brand-600">📶 High-Speed Campus Wi-Fi</span>
+                        <span id="voteCount1" class="font-outfit font-bold text-brand-600 text-sm">28%</span>
+                    </button>
+
+                    <button onclick="castLiveVote(2)" class="w-full text-left p-4 rounded-2xl bg-white border border-brand-200 hover:border-brand-500 transition-all shadow-sm flex items-center justify-between group">
+                        <span class="font-semibold text-slate-800 group-hover:text-brand-600">📚 24/7 Examination Study Lounges</span>
+                        <span id="voteCount2" class="font-outfit font-bold text-brand-600 text-sm">18%</span>
+                    </button>
+
+                    <button onclick="castLiveVote(3)" class="w-full text-left p-4 rounded-2xl bg-white border border-brand-200 hover:border-brand-500 transition-all shadow-sm flex items-center justify-between group">
+                        <span class="font-semibold text-slate-800 group-hover:text-brand-600">🤝 Alumni & Industry Workshops</span>
+                        <span id="voteCount3" class="font-outfit font-bold text-brand-600 text-sm">12%</span>
+                    </button>
+                    
+                    <p id="pollFeedback" class="text-xs font-semibold text-brand-600 h-4 text-center mt-2"></p>
+                </div>
+
+                <!-- Interactive Chart Canvas -->
+                <div class="lg:col-span-7 glass-card p-6 rounded-3xl border border-brand-200 shadow-xl">
+                    <h4 class="font-outfit font-bold text-lg text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-brand-500"></i> Dynamic Campus Vote Distribution
+                    </h4>
+                    <div class="relative w-full h-72">
+                        <canvas id="pollChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="badge" class="py-20 bg-gradient-to-b from-brand-50/50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                    Digital Campaign Card
+                </span>
+                <h2 class="font-outfit font-extrabold text-3xl sm:text-5xl text-slate-900 mt-4 mb-4">
+                    Generate Your Supporter Badge
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Type your name and department to generate a custom campaign card to share on Instagram and WhatsApp!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Badge Input Form -->
+                <div class="lg:col-span-5 space-y-4 glass-card p-8 rounded-3xl border border-brand-200 shadow-lg">
+                    <h3 class="font-outfit font-bold text-xl text-slate-900 mb-4">Customize Your Card</h3>
+                    
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
+                        <input type="text" id="badgeInputName" placeholder="e.g. Alex Paul" oninput="updateBadgePreview()" class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Department / Year</label>
+                        <input type="text" id="badgeInputDept" placeholder="e.g. UG CSE '27" oninput="updateBadgePreview()" class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <button onclick="downloadBadgeAction()" class="w-full py-3.5 rounded-xl gradient-bg text-white font-outfit font-bold text-sm shadow-md hover:scale-[1.01] transition-transform flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i> Download / Share Badge
+                    </button>
+                </div>
+
+                <!-- Live Badge Preview -->
+                <div class="lg:col-span-7 flex justify-center">
+                    <div id="badgePreviewCard" class="w-full max-w-md gradient-bg rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden border border-brand-400">
+                        <!-- Decorative Watermark Background -->
+                        <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl font-outfit font-black select-none pointer-events-none">
+                            UG
+                        </div>
+
+                        <div class="flex items-center justify-between mb-8">
+                            <span class="text-xs font-bold tracking-widest uppercase bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                                Official Supporter
+                            </span>
+                            <span class="text-xs text-brand-200 font-semibold">Oct 16, 2026</span>
+                        </div>
+
+                        <div class="space-y-1 mb-8">
+                            <p class="text-xs text-brand-200 uppercase font-semibold">I Proudly Endorse</p>
+                            <h3 class="font-outfit font-black text-3xl tracking-tight text-white">RAZIN MOYI ANK</h3>
+                            <p class="text-sm font-medium text-brand-300">For UG ER Representative</p>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/20 flex items-center justify-between">
+                            <div>
+                                <span id="badgePreviewName" class="block font-outfit font-bold text-lg text-white">Alex Paul</span>
+                                <span id="badgePreviewDept" class="text-xs text-brand-200 font-medium">UG CSE '27</span>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-white text-brand-900 flex items-center justify-center font-outfit font-bold text-sm shadow-md">
+                                RM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="supporters" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                    Wall of Fame
+                </span>
+                <h2 class="font-outfit font-extrabold text-3xl sm:text-5xl text-slate-900 mt-4 mb-4">
+                    Student Supporters Feed
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Join over <span id="supporterCountNumber" class="font-bold text-brand-600">185</span> students who have pledged their vote for Razin Moyi Ank!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Endorsement Form -->
+                <div class="lg:col-span-4 glass-card p-6 rounded-3xl border border-brand-200 shadow-md">
+                    <h3 class="font-outfit font-bold text-xl text-slate-900 mb-4">Add Your Endorsement</h3>
+                    <form onsubmit="submitSupporterFeed(event)" class="space-y-4">
+                        <input type="text" id="supporterInputName" placeholder="Full Name" required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                        <input type="text" id="supporterInputDept" placeholder="Department / Year" required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                        <textarea id="supporterInputNote" rows="3" placeholder="Why are you voting for Razin?" required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500"></textarea>
+                        <button type="submit" class="w-full py-3 rounded-xl gradient-bg text-white font-outfit font-bold text-sm shadow-md hover:scale-[1.01] transition-transform">
+                            Post Support Note
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Live Feed Cards -->
+                <div class="lg:col-span-8">
+                    <div id="supporterFeedContainer" class="space-y-4 max-h-[460px] overflow-y-auto pr-2 custom-scrollbar">
+                        
+                        <!-- Sample Feed Item 1 -->
+                        <div class="p-5 rounded-2xl bg-brand-50/50 border border-brand-100 shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-500 text-white font-bold font-outfit flex items-center justify-center shrink-0">
+                                AR
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="font-outfit font-bold text-slate-900 text-base">Arjun R.</h4>
+                                    <span class="text-xs text-brand-600 font-semibold">(UG ECE '26)</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">"Razin has always been there to help us with lab access issues. Truly a representative who acts fast!"</p>
+                            </div>
+                        </div>
+
+                        <!-- Sample Feed Item 2 -->
+                        <div class="p-5 rounded-2xl bg-brand-50/50 border border-brand-100 shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-500 text-white font-bold font-outfit flex items-center justify-center shrink-0">
+                                SF
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="font-outfit font-bold text-slate-900 text-base">Saniya Fathima</h4>
+                                    <span class="text-xs text-brand-600 font-semibold">(UG Mechanical '27)</span>
+                                </div>
+                                <p class="text-slate-600 text-sm">"The manifesto addresses real problems like 24/7 library access during exams. Full support!"</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-900 text-white py-16 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-outfit font-bold text-lg">
+                            RM
+                        </div>
+                        <span class="font-outfit font-bold text-2xl tracking-tight">RAZIN MOYI ANK</span>
+                    </div>
+                    <p class="text-brand-200 text-sm max-w-sm leading-relaxed">
+                        Official Campaign for UG External Relations Representative 2026. Dedicated to transparency, student empowerment, and academic excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-outfit font-bold text-base mb-4 text-brand-300">Quick Navigation</h4>
+                    <ul class="space-y-2 text-sm text-brand-100">
+                        <li><a href="#vision" class="hover:text-white transition-colors">Manifesto</a></li>
+                        <li><a href="#countdown" class="hover:text-white transition-colors">Election Date</a></li>
+                        <li><a href="#games" class="hover:text-white transition-colors">Decision Game</a></li>
+                        <li><a href="#analytics" class="hover:text-white transition-colors">Poll Analytics</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-outfit font-bold text-base mb-4 text-brand-300">Connect With Razin</h4>
+                    <div class="flex items-center space-x-3">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-md" title="Instagram">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <button onclick="triggerContactModal()" class="w-10 h-10 rounded-xl bg-brand-800 border border-brand-700 text-white flex items-center justify-center hover:bg-brand-700 transition-colors" title="Send Direct Message">
+                            <i class="fa-solid fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-brand-800 text-center text-xs text-brand-400">
+                &copy; 2026 Razin Moyi Ank Campaign. Built with student passion. Election Date: 16/10/2026.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vote Modal -->
+    <div id="voteModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-8 rounded-3xl shadow-2xl relative border border-brand-300">
+            <button onclick="closeVoteModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 gradient-bg text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-md">
+                    <i class="fa-solid fa-check-to-slot"></i>
+                </div>
+                <h3 class="font-outfit font-bold text-2xl text-slate-900">Pledge Your Vote</h3>
+                <p class="text-xs text-slate-600 mt-1">Register your pledge for Razin Moyi Ank on October 16, 2026.</p>
+            </div>
+            <form onsubmit="submitPledgeAction(event)" class="space-y-4">
+                <input type="text" placeholder="Full Name" required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                <input type="text" placeholder="Student ID / Roll No." required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                <button type="submit" class="w-full py-3.5 rounded-xl gradient-bg text-white font-outfit font-bold text-base shadow-md hover:scale-[1.01] transition-transform">
+                    Confirm Pledge
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Candidate Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-8 rounded-3xl shadow-2xl relative border border-brand-300">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 gradient-bg text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-md">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </div>
+                <h3 class="font-outfit font-bold text-2xl text-slate-900">Message Candidate</h3>
+                <p class="text-xs text-slate-600 mt-1">Send your query directly to Razin Moyi Ank.</p>
+            </div>
+            <form onsubmit="submitContactAction(event)" class="space-y-4">
+                <input type="text" placeholder="Your Name" required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                <input type="email" placeholder="Your Student Email" required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                <textarea rows="3" placeholder="Type your issue or query..." required class="w-full bg-white border border-brand-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500"></textarea>
+                <button type="submit" class="w-full py-3.5 rounded-xl gradient-bg text-white font-outfit font-bold text-base shadow-md hover:scale-[1.01] transition-transform">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Ticking Countdown Logic for Election Day: October 16, 2026
+        function updateTickingCounter() {
+            const electionDate = new Date('2026-10-16T08:00:00+05:30').getTime();
+            const now = new Date().getTime();
+            const difference = electionDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('timerDays').innerText = String(days).padStart(2, '0');
+                document.getElementById('timerHours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('timerMinutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('timerSeconds').innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('timerDays').innerText = '00';
+                document.getElementById('timerHours').innerText = '00';
+                document.getElementById('timerMinutes').innerText = '00';
+                document.getElementById('timerSeconds').innerText = '00';
+            }
+        }
+        setInterval(updateTickingCounter, 1000);
+        updateTickingCounter();
+
+        // "What Would Razin Do?" Interactive Scenario Data
+        const scenarioData = [
+            {
+                title: "Issue: Poor Wi-Fi Speed & Equipment Availability in Labs",
+                problem: "Students frequently experience slow connectivity during practical exams and lack required components for ER lab work.",
+                solution: "Propose a dedicated high-bandwidth node for UG ER labs and establish a component rental portal managed transparently through student volunteers."
+            },
+            {
+                title: "Issue: Delayed Academic Issue Resolution & Bureaucracy",
+                problem: "Grievances regarding course registration, hall tickets, and mark corrections often stall in administrative backlogs.",
+                solution: "Implement a digital 48-hour SLA tracking dashboard where every submitted student issue receives an official response deadline."
+            },
+            {
+                title: "Issue: Limited Night Access to Library & Study Spaces",
+                problem: "Library doors close early during peak mid-term and final examination study weeks.",
+                solution: "Advocate for 24/7 library access during exam fortnights equipped with security support and study refreshment zones."
+            }
+        ];
+
+        function selectScenario(idx) {
+            for(let i=0; i<3; i++) {
+                const btn = document.getElementById(`scenBtn${i}`);
+                if(i === idx) {
+                    btn.className = "p-4 rounded-2xl border border-brand-500 bg-brand-50 text-brand-900 font-semibold text-sm text-left hover:border-brand-500 transition-all flex items-center gap-3";
+                } else {
+                    btn.className = "p-4 rounded-2xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm text-left hover:border-brand-500 transition-all flex items-center gap-3";
+                }
+            }
+            document.getElementById('scenTitle').innerText = scenarioData[idx].title;
+            document.getElementById('scenProblem').innerText = scenarioData[idx].problem;
+            document.getElementById('scenSolution').innerText = scenarioData[idx].solution;
+        }
+
+        // Poll & Chart.js Implementation
+        let pollData = [42, 28, 18, 12];
+        let pollChart;
+
+        window.onload = function() {
+            const ctx = document.getElementById('pollChart').getContext('2d');
+            pollChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Lab Equipment', 'Campus Wi-Fi', '24/7 Study Lounges', 'Alumni Workshops'],
+                    datasets: [{
+                        data: pollData,
+                        backgroundColor: ['#0284C7', '#38BDF8', '#0369A1', '#BAE0FD'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: 'Source Sans 3', size: 12 },
+                                color: '#334155'
+                            }
+                        }
+                    }
+                }
+            });
+        };
+
+        function castLiveVote(idx) {
+            pollData[idx] += 3;
+            const total = pollData.reduce((a, b) => a + b, 0);
+            
+            for(let i=0; i<4; i++) {
+                let pct = Math.round((pollData[i] / total) * 100);
+                document.getElementById(`voteCount${i}`).innerText = pct + '%';
+            }
+
+            pollChart.data.datasets[0].data = pollData;
+            pollChart.update();
+
+            document.getElementById('pollFeedback').innerText = "Vote recorded in live simulator!";
+            confetti({ particleCount: 35, spread: 50, origin: { y: 0.7 } });
+        }
+
+        // Supporter Badge Generator Logic
+        function updateBadgePreview() {
+            const nameVal = document.getElementById('badgeInputName').value.trim();
+            const deptVal = document.getElementById('badgeInputDept').value.trim();
+
+            document.getElementById('badgePreviewName').innerText = nameVal ? nameVal : 'Alex Paul';
+            document.getElementById('badgePreviewDept').innerText = deptVal ? deptVal : "UG CSE '27";
+        }
+
+        function downloadBadgeAction() {
+            confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
+            showToast("Badge generated! Take a screenshot to share on Instagram!");
+        }
+
+        // Live Supporter Feed Handler
+        let currentSupporterCount = 185;
+        function submitSupporterFeed(e) {
+            e.preventDefault();
+            const name = document.getElementById('supporterInputName').value;
+            const dept = document.getElementById('supporterInputDept').value;
+            const note = document.getElementById('supporterInputNote').value;
+
+            const container = document.getElementById('supporterFeedContainer');
+            const newCard = document.createElement('div');
+            newCard.className = "p-5 rounded-2xl bg-brand-50 border border-brand-200 shadow-sm flex items-start gap-4 animate-bounce";
+            
+            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0,2);
+            newCard.innerHTML = `
+                <div class="w-10 h-10 rounded-full bg-brand-500 text-white font-bold font-outfit flex items-center justify-center shrink-0">
+                    ${initials || 'UG'}
+                </div>
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2">
+                        <h4 class="font-outfit font-bold text-slate-900 text-base">${name}</h4>
+                        <span class="text-xs text-brand-600 font-semibold">(${dept})</span>
+                    </div>
+                    <p class="text-slate-600 text-sm">"${note}"</p>
+                </div>
+            `;
+            container.prepend(newCard);
+
+            currentSupporterCount++;
+            document.getElementById('supporterCountNumber').innerText = currentSupporterCount;
+
+            e.target.reset();
+            confetti({ particleCount: 100, spread: 80, origin: { y: 0.7 } });
+            showToast("Endorsement posted to Wall of Fame!");
+        }
+
+        // Modal Handlers
+        function triggerVoteModal() {
+            document.getElementById('voteModal').classList.remove('hidden');
+        }
+        function closeVoteModal() {
+            document.getElementById('voteModal').classList.add('hidden');
+        }
+        function submitPledgeAction(e) {
+            e.preventDefault();
+            closeVoteModal();
+            confetti({ particleCount: 120, spread: 90, origin: { y: 0.5 } });
+            showToast("Pledge confirmed for Razin Moyi Ank!");
+        }
+
+        function triggerContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+        }
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+        }
+        function submitContactAction(e) {
+            e.preventDefault();
+            closeContactModal();
+            confetti({ particleCount: 60, spread: 60, origin: { y: 0.5 } });
+            showToast("Message sent to Razin successfully!");
+        }
+
+        // Toast Notification Function
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 right-5 z-50 bg-brand-900 text-white px-6 py-3.5 rounded-2xl shadow-2xl border border-brand-400 font-semibold text-sm flex items-center gap-2 animate-pulse";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brand-400"></i> ${message}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
+    </script>
+</body>
+</html>
